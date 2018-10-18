@@ -11,6 +11,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+          update: true
           packages:
             - g++-5
       env:
@@ -21,6 +22,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+          update: true
           packages:
             - g++-6
       env:
@@ -31,6 +33,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+          update: true
           packages:
             - g++-7
       env:
@@ -41,6 +44,7 @@ matrix:
         apt:
           sources:
             - llvm-toolchain-trusty-4.0
+          update: true
           packages:
             - clang-4.0
       env:
@@ -51,6 +55,7 @@ matrix:
         apt:
           sources:
             - llvm-toolchain-trusty-5.0
+          update: true
           packages:
             - clang-5.0
       env:
@@ -61,13 +66,13 @@ matrix:
         apt:
           sources:
             - llvm-toolchain-trusty-6.0
+          update: true
           packages:
             - clang-6.0
       env:
         - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
 
 before_install:
-  - sudo apt-get -qq update
   - sudo apt-get install -y uuid-dev
   - sudo apt-get install -y libunwind8-dev
   - sudo apt-get install -y libxrandr-dev
