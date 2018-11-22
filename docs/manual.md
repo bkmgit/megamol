@@ -72,12 +72,21 @@ Tested with:
     $ cat /proc/version
     Linux version 4.4.0-93-generic (buildd@lgw01-03) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ) #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
 
-As prerequisites, following packages from the repository are required:
+    $cat /proc/version 
+    Linux version 4.18.17-300.fc29.x86_64 (mockbuild@bkernel04.phx2.fedoraproject.org) (gcc version 8.2.1 20181011 (Red Hat 8.2.1-4) (GCC)) #1 SMP Mon Nov 5 17:56:16 UTC 2018
+
+
+As prerequisites, following packages from the Ubuntu repository are required:
 
     $ sudo apt install cmake-curses-gui git libgl1-mesa-dev libncurses5-dev \
                        uuid-dev libexpat-dev libunwind-dev libxrandr-dev \
                        libxinerama-dev libxcursor-dev libxi-dev libglu1-mesa-dev
+                       
+For Fedora repositories:
 
+    $ sudo dnf install cmake git mesa-libGLU-devel ncurses-devel ncurses-libs \
+    uuid-devel expat-devel libunwind-devel libXrandr-devel \
+    libXinerama-devel libXcursor-devel libXi-devel
 
 First, download the software package from GitHub:
 
@@ -91,7 +100,8 @@ Start the ncurses gui for cmake:
 
     $ ccmake ../
 
-Hit `c` a couple of times until the screen does not change, then hit `g` to generate build files.
+Hit `c` a couple of times until the screen does not change, then hit `g` to generate build files. For a minimal build, only build
+the console, core and vislib
 On the console prompt, start `make`:
 
     $ make
